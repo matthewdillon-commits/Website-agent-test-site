@@ -108,19 +108,19 @@ p {
 
 @media (prefers-reduced-motion: no-preference) {
   .animate-fade-up {
-    animation: fade-up 0.7s ease both;
+    animation: fade-up 0.7s ease;
   }
 
   .animate-fade-up-d2 {
-    animation: fade-up 0.7s ease 0.12s both;
+    animation: fade-up 0.7s ease 0.12s;
   }
 
   .animate-fade-up-d3 {
-    animation: fade-up 0.7s ease 0.22s both;
+    animation: fade-up 0.7s ease 0.22s;
   }
 
   .animate-fade-up-d5 {
-    animation: fade-up 0.8s ease 0.35s both;
+    animation: fade-up 0.8s ease 0.35s;
   }
 }
 
