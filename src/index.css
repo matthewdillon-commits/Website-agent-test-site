@@ -106,20 +106,22 @@ p {
   }
 }
 
-.animate-fade-up {
-  animation: fade-up 0.7s ease both;
-}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-up {
+    animation: fade-up 0.7s ease both;
+  }
 
-.animate-fade-up-d2 {
-  animation: fade-up 0.7s ease 0.12s both;
-}
+  .animate-fade-up-d2 {
+    animation: fade-up 0.7s ease 0.12s both;
+  }
 
-.animate-fade-up-d3 {
-  animation: fade-up 0.7s ease 0.22s both;
-}
+  .animate-fade-up-d3 {
+    animation: fade-up 0.7s ease 0.22s both;
+  }
 
-.animate-fade-up-d5 {
-  animation: fade-up 0.8s ease 0.35s both;
+  .animate-fade-up-d5 {
+    animation: fade-up 0.8s ease 0.35s both;
+  }
 }
 
 /* Buttons */
