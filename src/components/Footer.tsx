@@ -39,10 +39,10 @@ export default function Footer() {
         </p>
         <div className="closing-ctas">
           <Link className="btn btn-white btn-lg" to="/contact">
-            Start for free
+            Book a demo <span aria-hidden>→</span>
           </Link>
           <Link className="btn btn-ghost-light btn-lg" to="/contact">
-            Book a demo
+            Talk to our team
           </Link>
         </div>
       </div>

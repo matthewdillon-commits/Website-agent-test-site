@@ -9,6 +9,7 @@ import {
   stats,
   steps,
 } from '../data/site'
+import { usePageTitle } from '../components/PageHero'
 
 function useCountUp(target: number, active: boolean) {
   const [value, setValue] = useState(0)
@@ -69,7 +70,7 @@ function DashboardPreview() {
         <div className="dashboard-card">
           <div className="dashboard-top">
             <div className="dashboard-brand">
-              <img src="/assets/logo.webp" alt="" />
+              <img src="/assets/logo.webp" alt="LimitlessAI logo" />
               <strong>LimitlessAI</strong>
             </div>
             <div className="online-pill">
@@ -90,7 +91,7 @@ function DashboardPreview() {
                 </div>
               </div>
               <div className="chat-row">
-                <img src="/assets/logo.webp" alt="" className="avatar" />
+                <img src="/assets/logo.webp" alt="LimitlessAI AI agent avatar" className="avatar" />
                 <div>
                   <div className="chat-bubble agent">
                     I'd be happy to help! I see you're on our Growth plan. Let me find the best
@@ -155,9 +156,10 @@ function DashboardPreview() {
 }
 
 export default function HomePage() {
-  useEffect(() => {
-    document.title = 'AI Phone & Chat Agents for Canadian Businesses | LimitlessAI'
-  }, [])
+  usePageTitle(
+    'AI Phone Agents, Chat Agents & Visibility Analytics for Canadian Businesses | LimitlessAI',
+    'LimitlessAI gives Canadian businesses one platform to answer every call, respond to every chat, and stay visible in AI search — so leads get captured and qualified instead of lost. Book a demo to see it on your own call and chat volume.',
+  )
 
   return (
     <>
@@ -179,20 +181,22 @@ export default function HomePage() {
         <div className="hero-inner">
           <div className="hero-copy">
             <p className="hero-eyebrow animate-fade-up">
-              Trusted by teams that never miss a conversation
+              AI Phone Agents · AI Chat Agents · Visibility Analytics
             </p>
             <h1 className="hero-title animate-fade-up-d2">
-              The self-improving conversation platform.
+              One AI platform for every call, chat, and lead your business can't afford to miss.
             </h1>
             <p className="hero-sub animate-fade-up-d3">
-              AI that analyzes customer interactions and makes every future conversation better.
+              Built for Canadian businesses: LimitlessAI answers calls and chats instantly,
+              qualifies leads in real time, and analyzes every conversation to keep improving —
+              so fewer inquiries slip away.
             </p>
             <div className="hero-ctas animate-fade-up-d3">
               <Link className="btn btn-primary btn-lg" to="/contact">
-                Start for free <ArrowRight size={16} />
+                Book a free demo call <ArrowRight size={16} />
               </Link>
               <Link className="btn btn-secondary btn-lg" to="/contact">
-                Book a demo
+                Talk to our team
               </Link>
             </div>
           </div>

@@ -1,4 +1,5 @@
-import { Phone, Calendar, Users, Languages, Headphones, Zap } from 'lucide-react'
+import { Phone, Calendar, Users, Languages, Headphones, Zap, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Faq, FeatureCards, PageHero, usePageTitle } from '../components/PageHero'
 
 const features = [
@@ -68,19 +69,32 @@ const faqs = [
 ]
 
 export default function PhoneAgentsPage() {
-  usePageTitle('AI Phone Agents | LimitlessAI')
+  usePageTitle(
+    'AI Phone System for Canadian Businesses — Never Miss a Call | LimitlessAI',
+    'Replace your business phone line with an AI phone system built for Canadian businesses: answer every inbound call 24/7, qualify leads, book appointments, and hand off to your team with full context. Book a demo to hear it on your own script.',
+  )
 
   return (
     <>
       <PageHero
-        eyebrow="AI Phone Agents"
-        title="24/7 voice AI for inbound & outbound calls"
-        description="Answer inbound calls instantly, qualify leads, book appointments, recover missed calls, and route high-intent conversations to the right person."
+        eyebrow="AI Phone System"
+        title="The AI phone system that answers every call your business would otherwise miss"
+        description="Keep your existing number and let an AI agent pick up every inbound call — evenings, weekends, and busy periods included. It qualifies leads, books appointments, and hands off warm, high-intent callers to your team with full context."
+        actions={
+          <div className="actions">
+            <Link className="btn btn-primary btn-lg" to="/contact">
+              Book a phone system demo <ArrowRight size={16} />
+            </Link>
+            <a className="btn btn-secondary btn-lg" href="#phone-faq">
+              See how setup works
+            </a>
+          </div>
+        }
       />
       <section className="content-section">
         <div className="content-narrow">
           <div className="center">
-            <h2 className="section-title">Everything your phone line should do</h2>
+            <h2 className="section-title">Everything your phone line should do for a Canadian business</h2>
             <p className="section-sub">
               Forward your existing business line or get a dedicated number. Works with any
               telephony provider — no hardware required.
@@ -91,7 +105,7 @@ export default function PhoneAgentsPage() {
       </section>
       <section className="content-section" style={{ background: '#fafafa' }}>
         <div className="content-narrow center">
-          <h2 className="section-title">Go live in three steps</h2>
+          <h2 className="section-title">Go live on your phone system in three steps</h2>
           <div className="steps-grid" style={{ textAlign: 'left' }}>
             {[
               {
@@ -114,12 +128,22 @@ export default function PhoneAgentsPage() {
               </div>
             ))}
           </div>
+          <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
+            <Link className="btn btn-primary btn-lg" to="/contact">
+              Book a phone system demo <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
-      <section className="content-section">
+      <section id="phone-faq" className="content-section">
         <div className="content-narrow center">
-          <h2 className="section-title">Frequently asked questions</h2>
+          <h2 className="section-title">Phone system questions, answered</h2>
           <Faq items={faqs} />
+          <div style={{ marginTop: '2.5rem' }}>
+            <Link className="btn btn-secondary btn-lg" to="/contact">
+              Still have questions? Talk to our team
+            </Link>
+          </div>
         </div>
       </section>
     </>

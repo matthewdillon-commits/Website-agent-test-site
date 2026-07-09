@@ -4,7 +4,10 @@ import { contactInfo } from '../data/site'
 import { PageHero, usePageTitle } from '../components/PageHero'
 
 export default function ContactPage() {
-  usePageTitle('Contact LimitlessAI | Book a Demo')
+  usePageTitle(
+    'Book a Demo — AI Phone & Chat Agents for Canadian Businesses | LimitlessAI',
+    'Book a demo call with LimitlessAI. Tell us about your call and chat volume and we will show you how AI phone agents, chat agents, and visibility analytics work for your Canadian business — no obligation.',
+  )
   const [submitted, setSubmitted] = useState(false)
 
   const onSubmit = (e: FormEvent) => {
@@ -15,9 +18,9 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Let's build something limitless"
-        description="Pick a time that works for you. We'll show you exactly how AI can transform your customer calls and visibility."
+        eyebrow="Book a Demo"
+        title="Book your LimitlessAI demo call"
+        description="Tell us a bit about your business and call/chat volume. A member of our team will follow up to schedule a live walkthrough tailored to your industry — no pressure, no obligation."
         actions={<div />}
       />
       <section className="content-section" style={{ paddingTop: 0 }}>
@@ -59,7 +62,7 @@ export default function ContactPage() {
                     <textarea name="message" rows={4} placeholder="Tell us about your business…" />
                   </label>
                   <button className="btn btn-primary btn-lg" type="submit">
-                    Book a demo
+                    Book my demo call
                   </button>
                 </>
               )}
@@ -70,17 +73,18 @@ export default function ContactPage() {
                 <div className="icon">
                   <Calendar size={18} />
                 </div>
-                <h3>Book a walkthrough</h3>
+                <h3>What to expect</h3>
                 <p>
-                  Experience LimitlessAI firsthand — we'll tailor the demo to your industry and
-                  call volume.
+                  A LimitlessAI team member follows up within 1 business day to schedule a live
+                  walkthrough tailored to your industry and call/chat volume — no pressure, no
+                  obligation.
                 </p>
               </div>
               <div className="info-card">
                 <div className="icon">
                   <Phone size={18} />
                 </div>
-                <h3>Call us</h3>
+                <h3>Prefer to call?</h3>
                 <p>
                   <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
                 </p>
@@ -89,12 +93,43 @@ export default function ContactPage() {
                 <div className="icon">
                   <Mail size={18} />
                 </div>
-                <h3>Email</h3>
+                <h3>Prefer email?</h3>
                 <p>
                   <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="content-section" style={{ background: '#fafafa', paddingTop: '2rem' }}>
+        <div className="content-narrow center">
+          <h2 className="section-title">What happens after you book</h2>
+          <p className="section-sub">
+            Every demo is tailored to your business — here's what to expect once you submit the
+            form above.
+          </p>
+          <div className="steps-grid" style={{ textAlign: 'left' }}>
+            {[
+              {
+                title: 'We review your business',
+                desc: 'We look at your industry, call/chat volume, and current setup so the call is relevant from minute one.',
+              },
+              {
+                title: 'We schedule a live walkthrough',
+                desc: 'Pick a time that works — we\'ll show AI phone agents, chat agents, or visibility analytics based on what you selected.',
+              },
+              {
+                title: 'You see it on your own scenario',
+                desc: 'We walk through real call and chat flows for your business so you can judge fit before committing to anything.',
+              },
+            ].map((s, i) => (
+              <div className="step-card" key={s.title}>
+                <div className={`step-num ${['amber', 'pink', 'purple'][i]}`}>{i + 1}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
