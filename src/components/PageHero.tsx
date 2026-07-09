@@ -25,7 +25,7 @@ export function PageHero({
               Book a demo <ArrowRight size={16} />
             </Link>
             <Link className="btn btn-secondary btn-lg" to="/contact">
-              Start for free
+              Talk to our team
             </Link>
           </div>
         )}
@@ -65,8 +65,28 @@ export function Faq({ items }: { items: { q: string; a: string }[] }) {
   )
 }
 
-export function usePageTitle(title: string) {
+const DEFAULT_META_DESCRIPTION =
+  '24/7 AI phone agents, chat agents, and visibility analytics so you never miss a lead. Trusted by Canadian businesses to capture calls, qualify leads, and grow.'
+
+function setMetaDescription(content: string) {
+  let tag = document.querySelector('meta[name="description"]')
+  if (!tag) {
+    tag = document.createElement('meta')
+    tag.setAttribute('name', 'description')
+    document.head.appendChild(tag)
+  }
+  tag.setAttribute('content', content)
+}
+
+/**
+ * Sets a unique document title and meta description per page.
+ * Every route should pass its own `description` — without one, pages fall back
+ * to the site-wide default, which is how every page previously ended up sharing
+ * identical metadata regardless of content.
+ */
+export function usePageTitle(title: string, description: string = DEFAULT_META_DESCRIPTION) {
   useEffect(() => {
     document.title = title
-  }, [title])
+    setMetaDescription(description)
+  }, [title, description])
 }
